@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta charset="utf-8">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body class="bg">
+		<div class="container">
+        	<!-- Page Content goes here -->
+        	<div class="row">
+        		<a href="entrar.html" class="col s2 white-text" style="margin-left: 0px; padding: 0px;"><i class="medium material-icons" style="margin-right: 0px; padding: 0px;">&#xE5CB;</i></a>
+        		<h2 class="col s12 left-align white-text">Criando conta</h2>
+				<form class="col s12" id="formCadastro" action="" method="post">
+				  <div class="row">
+				    <div class="input-field col s12">
+				      <input id="nomeUsu" type="text" name="nomeUsu" class="validate">
+				      <label for="nomeUsu">Nome Completo</label>
+				    </div>
+				  </div>
+				  <div class="row">
+				  		<div class="input-field col s12">
+						   	  <input type="text" class="datepicker" name="datanasc" id="datanasc">
+							 <label for="datanasc">Data de Nascimento</label>
+						  </div>
+				  </div>
+				  <div class="row">
+				    <div class="input-field col s12">
+				      <input id="email" type="email" name="email" class="validate">
+				      <label for="email">Email</label>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="input-field col s12">
+				      <input id="senha" name="senha" type="password" class="validate">
+				      <label for="password">Senha</label>
+				    </div>
+				    <div class="input-field col s12">
+				      <input id="senha2" name="senha2" type="password" class="validate">
+				      <label for="password">Repetir Senha</label>
+				    </div>
+				  </div>
+				  <button class="col s12 z-depth-1 waves-effect waves-light btn-large white grey-text darken-text-2" onclick="cadastrar()">CADASTRAR</button>
+				</form>
+			</div>
+      	</div>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		 <script type="text/javascript">
+        	   var data = new Date();
+	        	var dia  = data.getDate();
+	            var mes = data.getMonth()+1;
+	            var ano = data.getFullYear();
+	            if (dia.toString().length==1) {
+	                dia = "0"+dia;
+	            }  
+	            if (mes.toString().length==1) {
+	                mes = "0"+mes;
+	            }  
+
+	            data = dia+"/"+mes+"/"+ano;	
+
+
+        	   $('.datepicker').pickadate({
+        	   		monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+					monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+				    weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
+				    weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+				    selectMonths: true, // Creates a dropdown to control month
+				    selectYears: 99, // Creates a dropdown of 15 years to control year,
+				    labelMonthNext: 'Próximo mês',
+				    labelMonthPrev: 'Mês anterior',
+				    labelMonthSelect: 'Selecione um mês',
+				    labelYearSelect: 'Selecione um ano',
+				    today: 'Hoje',
+				    clear: 'Limpar',
+				    close: 'Ok',
+				    closeOnSelect: false, // Close upon selecting a date,
+				    format: 'dd/mm/yyyy',
+				    max: data
+				});
+
+        	
+        </script>
+	</body>
+</html>

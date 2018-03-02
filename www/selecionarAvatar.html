@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body onload="onLoad()">
+		<div class="container">
+        	<!-- Page Content goes here -->
+        	<div class="row">
+        		<a href="criarConta.html" class="col s2 white-text" style="margin-left: 0px; padding: 0px;"><i class="medium material-icons">&#xE5CB;</i></a>
+				<div class="col s12">
+				  <div class="row">
+				    <div class="col s12 center">
+				    	<a href="#" class="dropdown-button" data-activates='dropNav'><img class="avatar circle" src="" id="fotoUsu" style="padding: 10px;border: 3px #fff solid;"></a>
+				    	<ul id='dropNav' class='dropdown-content' style="margin-top: 10px;">
+						    <li><a href="#!" class="grey-text darken-text-2" onclick="getPhoto(1)"><i class="material-icons grey-text darken-text-2">&#xE8F0;</i>Galeria</a></li>
+						    <li><a href="#!" class="grey-text darken-text-2" onclick="getPhoto(2)"><i class="material-icons grey-text darken-text-2">&#xE3AF;</i>Câmera</a></li>
+						</ul>
+				    </div>
+				  </div>
+				</div>
+				<div class="col s2"></div>
+				<a class="col s3 z-depth-1 waves-effect waves-light btn-large white grey-text darken-text-2 disabled" id="mudar" onclick="photoUpload()" href="#">SALVAR</a>
+				<div class="col s2"></div>
+				<a class="col s3 z-depth-1 waves-effect waves-light btn-large white grey-text darken-text-2" href="confirmacao.html">PULAR</a>
+				<div class="col s2"></div>
+			</div>
+      	</div>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/updatePhoto.js"></script>
+		<script type="text/javascript">
+			var user = JSON.parse(window.localStorage.getItem("usuario"));
+
+			$("#fotoUsu").attr("src", "http://meca.ifrn.edu.br/buscapet/api/arquivos/imguser/"+user.fotoUsu);
+			console.log(user);
+			console.log("http://10.0.0.108:85/buscapet/api/arquivos/imguser/"+user.fotoUsu);
+		</script>
+	</body>
+</html>

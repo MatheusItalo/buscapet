@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body class="bg">
+		<div class="container">
+        	<!-- Page Content goes here -->
+        	<div class="row">
+        		<a href="index.html" class="col s2 white-text" style="margin-left: 0px; padding: 0px;"><i class="medium material-icons" style="margin-right: 0px; padding: 0px;">chevron_left</i></a>
+        		<h2 class="col s12 left-align white-text">Adicionando pet</h2>
+				<form class="col s12">
+				  <div class="row">
+				    <div class="input-field col s12">
+				      <input id="name" type="text" class="validate">
+				      <label for="name">Nome</label>
+				    </div>
+				    <div class="input-field col s12">
+    					<select>
+      						<option value="" disabled selected>Selecione a Raça</option>
+      						<option value="1">Option 1</option>
+      						<option value="2">Option 2</option>
+      						<option value="3">Option 3</option>
+    					</select>
+  					</div>
+  					<div class="input-field col s12">
+    					<select>
+      						<option value="" disabled selected>Selecione o Sexo</option>
+      						<option value="1">Macho</option>
+      						<option value="2">Fêmea</option>
+    					</select>
+  					</div>
+  					<div class="input-field col s12">
+				      <input id="peso" type="text" class="validate">
+				      <label for="peso">Peso</label>
+				    </div>
+				  </div>
+				</form>
+				<a class="col s12 z-depth-1 waves-effect waves-light btn-large white grey-text darken-text-2" href="selecionarAvatar.html">SALVAR</a>
+			</div>
+      	</div>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="lib/jquery.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+	    		$('select').material_select();
+	  		});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta charset="utf-8">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style type="text/css">
+			.container{
+				width: 95%;
+				height: 95%;
+			}
+			#imgPet{
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body style="background: #ffffff;">
+		<div class="container">
+        	<!-- Page Content goes here -->
+        	<div class="row">
+        		<a href="index.html" class="col s2 white-text" style="margin-left: 0px; padding: 0px;"><i class="medium material-icons">&#xE5CB;</i></a>
+			</div>
+		</div>
+		<div class="row" id="dados">
+			<div class="col s12">
+				<div class="card galeria">
+			        <div class="card-image container">
+			          <img src="bg.jpg" id="imgPet">
+			          <div class="container">
+			          	<span class="card-title" id="nome">Piruleta</span>
+			          </div>
+			        </div>
+			        <div class="container">
+				        <div class="collection">
+				        	<p class="collection-item grey-text"><i class="material-icons">&#xE14F;</i><span id="peso" class="secondary-content grey-text">150kg</span></p>
+				        	<p class="collection-item grey-text"><i class="material-icons">&#xE63D;</i><span class="secondary-content grey-text" id="sexo">Macho</span></p>
+				        	<p class="collection-item grey-text"><i class="material-icons">&#xE91D;</i><span class="secondary-content grey-text" id="tipo">Tartaruga</span></p>
+					        <a href="#"  class="collection-item" onclick="irPerfil()"><i class="material-icons">&#xE853;</i><span class="secondary-content" href="#" id="dono">MARCOS PIKAPAU</span></a>
+					      </div>
+					</div>
+			    </div>
+			    <div class="fixed-action-btn">
+			    <a class="btn-floating btn-large red" href="#" onclick="irPerfil()"><i class="large material-icons">visibility</i>
+				</a>
+			</div>
+			</div>		
+      	</div>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/perfilPet.js"></script>
+		<script type="text/javascript">
+			var id = window.localStorage.getItem("idPet");
+			mostrarDados(id);
+		</script>
+	</body>
+</html>

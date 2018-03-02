@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta charset="utf-8">
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body onload="onLoad()">
+		<div class="container">
+        	<!-- Page Content goes here -->
+        	<div class="row">
+        		<a href="index.html" class="col s2 white-text" style="margin-left: 0px; padding: 0px;"><i class="medium material-icons">&#xE5CB;</i></a>
+				<div class="col s12">
+				  <div class="row">
+				    <div class="col s12 center">
+				    	<a href="#" class="dropdown-button" id="link" data-activates='dropNav'><img class="avatar circle" src="#" id="imgUser" style="border: 3px #fff solid;"></a>
+				    	<ul id='dropNav' class='dropdown-content' style="margin-top: 10px;">
+						    <li><a href="#!" class="grey-text darken-text-2"><i class="material-icons grey-text darken-text-2">&#xE8F0;</i>Galeria</a></li>
+						    <li><a href="#!" class="grey-text darken-text-2"><i class="material-icons grey-text darken-text-2">&#xE3AF;</i>Câmera</a></li>
+						</ul>
+				    </div>
+				    <div class="col s12 center">
+					    <a href="#" id="nome" class="dropdown-button white-text" data-activates='editar'><h4 id="nomeUser"></h4></a>
+				    	<ul id='editar' class='dropdown-content' style="margin-top: 10px;">
+						    <li><a href="#!" class="grey-text darken-text-2"><i class="material-icons grey-text darken-text-2">&#xE853;</i>Editar Perfil</a></li>
+						    <li><a href="#!" class="grey-text darken-text-2"><i class="material-icons grey-text darken-text-2">&#xE869;</i>Conta</a></li>
+						</ul>
+						<a href="#!" id="mensagem" class="waves-effect btn green">Mandar Mensagem</a>
+					</div>
+				  </div>
+				</div>
+				<div class="col s12 row" id="pets">
+					
+				    <div class="fixed-action-btn">
+					    <a class="btn-floating btn-large red" href="formulariopet2.html">
+					      <i class="large material-icons">&#xE145;</i>
+					    </a>
+					</div>
+				</div>
+			</div>
+      	</div>
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/perfilUser.js"></script>
+		<script type="text/javascript">
+			var user = JSON.parse(window.localStorage.getItem("usuario"));
+			var id = window.localStorage.getItem("idUser");
+			mostrarDados(id);
+			
+			if (id==user.id) {
+				$("#mensagem").removeClass("waves-effect btn green");
+				$("#mensagem").addClass("waves-effect btn green disabled");
+			}else{
+				$("#link").removeClass("dropdown-button");
+				$("#nome").removeClass("dropdown-button");
+			}
+		</script>
+	</body>
+</html>
